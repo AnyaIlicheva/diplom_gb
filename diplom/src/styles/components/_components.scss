@@ -1,0 +1,265 @@
+@use "../base/variables" as *;
+@use "../base/reset" as *;
+
+body {
+  font-family: $font-neucha;
+  font-weight: 400;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid $border;
+  min-height: 400px;
+  max-width: 1021px;
+  font-size: 1.25rem;
+  border-radius: 10px;
+  background-color: $background-color-list;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.achivements-list {
+  display: grid;
+  flex-wrap: wrap;
+  justify-items: center;
+  align-items: center;
+  width: 400px;
+  margin: 10px auto;
+  padding: 20px;
+  border: 1px solid $border;
+  font-size: 1.25rem;
+  border-radius: 10px;
+  background-color: $background-color-list;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.achivements-ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+  padding: 10px;
+  gap: 20px;
+}
+
+h1, h2, h3, h4, h5 {
+  color: $color-f;
+  display: flex;
+  justify-content: center;
+  font-family: $font-neucha;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.addedHabitCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid $border;
+  margin: 15px;
+  border-radius: 15px;
+  padding: 20px;
+  align-items: center;
+  background-color: $color-addedHabitCard;
+  transition: transform 0.2s;
+  height: 150px;
+  width: 70%;
+
+  &:hover {
+    transform: scale(1);
+  }
+}
+
+input {
+  background-color: #32144c18;
+  font-family: $font-neucha;
+  font-size: large;
+  color: $color-f;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px 0;
+  text-align: center;
+  height: 50px;
+  width: 70%;
+
+  &::placeholder {
+    color: $color-f;
+    text-align: center;
+    
+  }
+}
+
+.habitButton, .motivationButton, .deletButton {
+  font-family: $font-neucha;
+  font-weight: 500;
+  cursor: pointer;
+  color: $color-text-on-buttons;
+  font-size: medium;
+  margin: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s, box-shadow 0.2s;
+}
+
+.habitButton {
+  background-color: $color-f;
+}
+
+.motivationButton {
+  background-color: $background-color-motivation;
+  min-width: 250px;
+  height: 50px;
+  color: $color-f;
+  font-family: $font-neucha;
+  font-weight: 400;
+  font-size: calc(5px + 1.5vmin);
+  font-weight: 700;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.deletButton {
+  background-color: $color-buttons-del;
+  border: none;
+  color: $color-text-on-buttons;
+  border-radius: 5px;
+  width: 60px;
+  height: 50px;
+
+  &:hover {
+    background-color: $color-buttons-del-hover;
+  }
+}
+
+.completedButton {
+  background-color: $color-buttons-completed;
+  border: none;
+  color: $color-text-on-buttons;
+  border-radius: 5px;
+  width: 60px;
+  height: 50px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-buttons-completed-hover;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.habitTitle {
+  font-family: $font-neucha;
+  font-size: larger;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $color-f;
+  margin: 10px;  
+  word-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.helpSummary {
+  border: 1px solid #32144c72;
+  font-family: $font-neucha;
+  font-weight: 300;
+  color: $color-f;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgba(83, 87, 83, 0.1);
+  font-size: medium;
+}
+
+.motivationArticle {
+  border: 2px solid $border;
+  min-height: 300px;
+  width: 90%;
+  border-radius: 15px;
+  margin: 30px;
+  padding: 20px;
+  background-color: $background-color-motivation-article;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  font-family: $font-neucha;
+  font-weight: 600;
+}
+
+.motivation-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.motivation-p {
+  margin: 10px;
+}
+
+.mascot {
+  margin: 20px;
+  width: map-get($mascot, width);
+  height: map-get($mascot, height);
+}
+
+.goButton {
+  width: map-get($goButton-img, width);
+  height: map-get($goButton-img, height);
+  cursor: pointer;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.mainMascot {
+  align-items: start;
+  margin: 10px;
+  width: map-get($main-mascot, width);
+  height: map-get($main-mascot, height);
+}
+
+.blockHello {
+  display: grid;
+  align-items: baseline;
+  justify-items: center;
+  grid-template-columns: 50% 50%;
+  justify-content: center;
+  margin: 20px;
+  gap: 10px;
+}
+
+.helloText {
+  width: map-get($hello-text, width);
+  height: map-get($hello-text, height);
+}
+
+.startLearn {
+  display: flex;
+}
+
+.achivements-points {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 60px;
+}
+
+.achivement-img {
+  width: map-get($achivement-img, width);
+  height: map-get($achivement-img, height);
+}

@@ -1,0 +1,79 @@
+@use "../base/variables" as *;
+@use "../base/reset" as *;
+  
+html, body {
+    font-family: $font-neucha;
+    color: $color-f;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .App {
+    text-align: center;
+    background-color: $color-text-on-buttons;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1.25rem;
+  }
+  
+  .logo {
+    width: map-get($logo-size, width);
+    height: map-get($logo-size, height);
+  }
+  
+  .blockTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+  
+  main, header, footer {
+    background-image: url(#{$background-image});
+    background-repeat: repeat;
+    background-size: auto;
+    background-attachment: fixed;
+  }
+  
+  header {
+    font-family: $font-neucha;
+    font-weight: 650;
+    font-size: calc(10px + 2vmin);
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    color: $color-f;
+  }
+  
+  main {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: 350px;
+  }
+  
+  footer {
+    justify-content: center;
+    color: $color-f;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .navigation {
+    display: flex;
+    justify-content: center;
+    padding: 10px 5px;
+  }
+  
+  .navButton {
+    height: 45px;
+    cursor: pointer;
+  }
+  
